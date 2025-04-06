@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "eRZg30Qh7svdcoUwvIpgqMpvPMsYGSH3U4l9IDavO40=",
+  "Source": "FileUploaderSample",
+  "BasePath": "_content/FileUploaderSample",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

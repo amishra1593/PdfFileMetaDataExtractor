@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  react-app:
+    build:
+      context: ./frontend-app
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./frontend-app:/app
+    depends_on:
+      - api
+
+  api:
+    build:
+      context: ./backend-api
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=localhost,1433;Database=FilesDB;User=sa;Password=admin@1234;MultipleActiveResultSets=true;TrustServerCertificate=True;

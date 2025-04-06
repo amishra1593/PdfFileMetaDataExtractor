@@ -1,0 +1,169 @@
+2025-04-06 15:43:22.985 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44354/_vs/browserLink - null null
+2025-04-06 15:43:22.985 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44354/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-06 15:43:23.595 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44354/_framework/aspnetcore-browser-refresh.js - 200 13788 application/javascript; charset=utf-8 630.1507ms
+2025-04-06 15:43:23.719 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-06 15:43:23.794 +05:30 [INF] Hosting environment: Development
+2025-04-06 15:43:23.794 +05:30 [INF] Content root path: D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample
+2025-04-06 15:43:23.968 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44354/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1037.3652ms
+2025-04-06 15:43:26.136 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44354/swagger/v1/swagger.json - null null
+2025-04-06 15:43:26.274 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44354/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 137.8708ms
+2025-04-06 15:43:33.959 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44354/api/Files/upload - multipart/form-data; boundary=----WebKitFormBoundaryaUc8QZRDR34Wkggj 5062
+2025-04-06 15:43:33.975 +05:30 [INF] CORS policy execution successful.
+2025-04-06 15:43:33.991 +05:30 [INF] Executing endpoint 'FileUploaderSample.Controller.FilesController.UploadFile (FileUploaderSample)'
+2025-04-06 15:43:34.061 +05:30 [INF] Route matched with {action = "UploadFile", controller = "Files"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadFile(FileUploaderSample.Requests.UploadFileRequest) on controller FileUploaderSample.Controller.FilesController (FileUploaderSample).
+2025-04-06 15:43:45.389 +05:30 [ERR] An unhandled exception occurred: Failed to save file contents}
+System.Exception: Failed to save file contents}
+ ---> System.Exception: Failed to Extract data from file}
+ ---> iTextSharp.text.exceptions.BadPasswordException: Bad user password
+   at iTextSharp.text.pdf.PdfReader..ctor(ReaderProperties properties, IRandomAccessSource byteSource)
+   at iTextSharp.text.pdf.PdfReader..ctor(Stream isp)
+   at FileUploaderSample.Services.Implemenation.FileService.<>c__DisplayClass5_0.<ExtractMetadataAsync>b__0() in D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample\Services\Implemenation\FileService.cs:line 68
+   --- End of inner exception stack trace ---
+   at FileUploaderSample.Services.Implemenation.FileService.<>c__DisplayClass5_0.<ExtractMetadataAsync>b__0() in D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample\Services\Implemenation\FileService.cs:line 83
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at FileUploaderSample.Services.Implemenation.FileService.ExtractMetadataAsync(Stream fileStream, String fileName) in D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample\Services\Implemenation\FileService.cs:line 64
+   at FileUploaderSample.Services.Implemenation.FileService.SaveFileToDatabase(IFormFile file) in D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample\Services\Implemenation\FileService.cs:line 37
+   --- End of inner exception stack trace ---
+   at FileUploaderSample.Services.Implemenation.FileService.SaveFileToDatabase(IFormFile file) in D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample\Services\Implemenation\FileService.cs:line 57
+   at FileUploaderSample.Controller.FilesController.UploadFile(UploadFileRequest request) in D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample\Controller\FilesController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-04-06 15:43:45.515 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 15:43:45.524 +05:30 [INF] Executed action FileUploaderSample.Controller.FilesController.UploadFile (FileUploaderSample) in 11460.793ms
+2025-04-06 15:43:45.525 +05:30 [INF] Executed endpoint 'FileUploaderSample.Controller.FilesController.UploadFile (FileUploaderSample)'
+2025-04-06 15:43:45.527 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44354/api/Files/upload - 500 null application/json; charset=utf-8 11568.4364ms
+2025-04-06 15:44:06.881 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44354/api/Files/upload - multipart/form-data; boundary=----WebKitFormBoundaryfLpVBAtXgkmC3Q1l 5062
+2025-04-06 15:44:06.889 +05:30 [INF] CORS policy execution successful.
+2025-04-06 15:44:06.890 +05:30 [INF] Executing endpoint 'FileUploaderSample.Controller.FilesController.UploadFile (FileUploaderSample)'
+2025-04-06 15:44:06.890 +05:30 [INF] Route matched with {action = "UploadFile", controller = "Files"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadFile(FileUploaderSample.Requests.UploadFileRequest) on controller FileUploaderSample.Controller.FilesController (FileUploaderSample).
+2025-04-06 15:44:08.594 +05:30 [ERR] An unhandled exception occurred: Failed to save file contents}
+System.Exception: Failed to save file contents}
+ ---> System.Exception: Failed to Extract data from file}
+ ---> iTextSharp.text.exceptions.BadPasswordException: Bad user password
+   at iTextSharp.text.pdf.PdfReader..ctor(ReaderProperties properties, IRandomAccessSource byteSource)
+   at iTextSharp.text.pdf.PdfReader..ctor(Stream isp)
+   at FileUploaderSample.Services.Implemenation.FileService.<>c__DisplayClass5_0.<ExtractMetadataAsync>b__0() in D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample\Services\Implemenation\FileService.cs:line 68
+   --- End of inner exception stack trace ---
+   at FileUploaderSample.Services.Implemenation.FileService.<>c__DisplayClass5_0.<ExtractMetadataAsync>b__0() in D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample\Services\Implemenation\FileService.cs:line 83
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at FileUploaderSample.Services.Implemenation.FileService.ExtractMetadataAsync(Stream fileStream, String fileName) in D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample\Services\Implemenation\FileService.cs:line 64
+   at FileUploaderSample.Services.Implemenation.FileService.SaveFileToDatabase(IFormFile file) in D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample\Services\Implemenation\FileService.cs:line 37
+   --- End of inner exception stack trace ---
+   at FileUploaderSample.Services.Implemenation.FileService.SaveFileToDatabase(IFormFile file) in D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample\Services\Implemenation\FileService.cs:line 57
+   at FileUploaderSample.Controller.FilesController.UploadFile(UploadFileRequest request) in D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample\Controller\FilesController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-04-06 15:44:08.596 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 15:44:08.596 +05:30 [INF] Executed action FileUploaderSample.Controller.FilesController.UploadFile (FileUploaderSample) in 1706.1801ms
+2025-04-06 15:44:08.596 +05:30 [INF] Executed endpoint 'FileUploaderSample.Controller.FilesController.UploadFile (FileUploaderSample)'
+2025-04-06 15:44:08.597 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44354/api/Files/upload - 500 null application/json; charset=utf-8 1717.2321ms
+2025-04-06 15:46:37.440 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44354/api/Files/upload - multipart/form-data; boundary=----WebKitFormBoundary0ZPmo06b0lBc2bD7 5062
+2025-04-06 15:46:37.531 +05:30 [INF] CORS policy execution successful.
+2025-04-06 15:46:37.540 +05:30 [INF] Executing endpoint 'FileUploaderSample.Controller.FilesController.UploadFile (FileUploaderSample)'
+2025-04-06 15:46:37.553 +05:30 [INF] Route matched with {action = "UploadFile", controller = "Files"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadFile(FileUploaderSample.Requests.UploadFileRequest) on controller FileUploaderSample.Controller.FilesController (FileUploaderSample).
+2025-04-06 15:46:43.343 +05:30 [ERR] An unhandled exception occurred: Failed to save file contents}
+System.Exception: Failed to save file contents}
+ ---> System.Exception: Failed to Extract data from file}
+ ---> iTextSharp.text.exceptions.BadPasswordException: Bad user password
+   at iTextSharp.text.pdf.PdfReader..ctor(ReaderProperties properties, IRandomAccessSource byteSource)
+   at iTextSharp.text.pdf.PdfReader..ctor(Stream isp)
+   at FileUploaderSample.Services.Implemenation.FileService.<>c__DisplayClass5_0.<ExtractMetadataAsync>b__0() in D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample\Services\Implemenation\FileService.cs:line 68
+   --- End of inner exception stack trace ---
+   at FileUploaderSample.Services.Implemenation.FileService.<>c__DisplayClass5_0.<ExtractMetadataAsync>b__0() in D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample\Services\Implemenation\FileService.cs:line 83
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at FileUploaderSample.Services.Implemenation.FileService.ExtractMetadataAsync(Stream fileStream, String fileName) in D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample\Services\Implemenation\FileService.cs:line 64
+   at FileUploaderSample.Services.Implemenation.FileService.SaveFileToDatabase(IFormFile file) in D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample\Services\Implemenation\FileService.cs:line 37
+   --- End of inner exception stack trace ---
+   at FileUploaderSample.Services.Implemenation.FileService.SaveFileToDatabase(IFormFile file) in D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample\Services\Implemenation\FileService.cs:line 57
+   at FileUploaderSample.Controller.FilesController.UploadFile(UploadFileRequest request) in D:\Learning\MClarens\Full Stack File Upload\Backend Service\FileUploaderSample\Controller\FilesController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-04-06 15:46:43.372 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 15:46:43.385 +05:30 [INF] Executed action FileUploaderSample.Controller.FilesController.UploadFile (FileUploaderSample) in 5831.4075ms
+2025-04-06 15:46:43.387 +05:30 [INF] Executed endpoint 'FileUploaderSample.Controller.FilesController.UploadFile (FileUploaderSample)'
+2025-04-06 15:46:43.389 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44354/api/Files/upload - 500 null application/json; charset=utf-8 5991.3503ms
+2025-04-06 15:47:40.515 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44354/api/Files/lists?searchValue=&page=null&pageSize=null - null null
+2025-04-06 15:47:40.538 +05:30 [INF] CORS policy execution successful.
+2025-04-06 15:47:40.588 +05:30 [INF] Executing endpoint 'FileUploaderSample.Controller.FilesController.GetAllFileLists (FileUploaderSample)'
+2025-04-06 15:47:40.727 +05:30 [INF] Route matched with {action = "GetAllFileLists", controller = "Files"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllFileLists(FileUploaderSample.Requests.FileListRequest) on controller FileUploaderSample.Controller.FilesController (FileUploaderSample).
+2025-04-06 15:47:44.731 +05:30 [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Author], [f].[CreationDate], [f].[FileName], [f].[PageCount], [f].[Title], [f].[UploadedAt]
+FROM [Files] AS [f]
+2025-04-06 15:47:44.857 +05:30 [INF] Executing ObjectResult, writing value of type 'FileUploaderSample.Responses.DTOs.FilesListResponse'.
+2025-04-06 15:47:45.043 +05:30 [INF] Executed action FileUploaderSample.Controller.FilesController.GetAllFileLists (FileUploaderSample) in 4315.3538ms
+2025-04-06 15:47:45.043 +05:30 [INF] Executed endpoint 'FileUploaderSample.Controller.FilesController.GetAllFileLists (FileUploaderSample)'
+2025-04-06 15:47:45.050 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44354/api/Files/lists?searchValue=&page=null&pageSize=null - null null
+2025-04-06 15:47:45.050 +05:30 [INF] CORS policy execution successful.
+2025-04-06 15:47:45.051 +05:30 [INF] Executing endpoint 'FileUploaderSample.Controller.FilesController.GetAllFileLists (FileUploaderSample)'
+2025-04-06 15:47:45.052 +05:30 [INF] Route matched with {action = "GetAllFileLists", controller = "Files"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllFileLists(FileUploaderSample.Requests.FileListRequest) on controller FileUploaderSample.Controller.FilesController (FileUploaderSample).
+2025-04-06 15:47:45.059 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44354/api/Files/lists?searchValue=&page=null&pageSize=null - 200 null application/json; charset=utf-8 4544.9999ms
+2025-04-06 15:47:45.125 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Author], [f].[CreationDate], [f].[FileName], [f].[PageCount], [f].[Title], [f].[UploadedAt]
+FROM [Files] AS [f]
+2025-04-06 15:47:45.128 +05:30 [INF] Executing ObjectResult, writing value of type 'FileUploaderSample.Responses.DTOs.FilesListResponse'.
+2025-04-06 15:47:45.130 +05:30 [INF] Executed action FileUploaderSample.Controller.FilesController.GetAllFileLists (FileUploaderSample) in 77.6992ms
+2025-04-06 15:47:45.130 +05:30 [INF] Executed endpoint 'FileUploaderSample.Controller.FilesController.GetAllFileLists (FileUploaderSample)'
+2025-04-06 15:47:45.132 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44354/api/Files/lists?searchValue=&page=null&pageSize=null - 200 null application/json; charset=utf-8 82.4537ms
+2025-04-06 10:28:52.965 +00:00 [INF] Now listening on: http://[::]:8080
+2025-04-06 10:28:53.011 +00:00 [INF] Now listening on: https://[::]:8081
+2025-04-06 10:28:53.014 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-06 10:28:53.016 +00:00 [INF] Hosting environment: Development
+2025-04-06 10:28:53.017 +00:00 [INF] Content root path: /app
+2025-04-06 10:28:54.033 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32769/swagger - null null
+2025-04-06 10:28:54.076 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32769/swagger - 301 0 null 44.7142ms
+2025-04-06 10:28:54.105 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32769/swagger/index.html - null null
+2025-04-06 10:28:54.190 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32769/swagger/index.html - 200 null text/html;charset=utf-8 84.0678ms
+2025-04-06 10:28:54.224 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32769/swagger/swagger-ui.css - null null
+2025-04-06 10:28:54.228 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32769/swagger/index.css - null null
+2025-04-06 10:28:54.229 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32769/swagger/swagger-ui-bundle.js - null null
+2025-04-06 10:28:54.230 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32769/swagger/swagger-ui-standalone-preset.js - null null
+2025-04-06 10:28:54.293 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32769/swagger/index.js - null null
+2025-04-06 10:28:54.306 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32769/swagger/index.js - 200 null application/javascript;charset=utf-8 35.7237ms
+2025-04-06 10:28:54.314 +00:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-04-06 10:28:54.316 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32769/swagger/index.css - 200 202 text/css 87.0049ms
+2025-04-06 10:28:54.360 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-04-06 10:28:54.365 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32769/swagger/swagger-ui.css - 200 154948 text/css 140.9349ms
+2025-04-06 10:28:54.461 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-04-06 10:28:54.462 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32769/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 231.324ms
+2025-04-06 10:28:55.257 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-04-06 10:28:55.259 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32769/swagger/swagger-ui-bundle.js - 200 1466741 text/javascript 1030.3387ms
+2025-04-06 10:28:55.473 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32769/swagger/v1/swagger.json - null null
+2025-04-06 10:28:55.501 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32769/swagger/favicon-32x32.png - null null
+2025-04-06 10:28:55.523 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-04-06 10:28:55.525 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32769/swagger/favicon-32x32.png - 200 628 image/png 23.9434ms
+2025-04-06 10:28:55.641 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32769/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 168.7728ms
+2025-04-06 10:28:55.879 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32768/ - null null
+2025-04-06 10:28:55.896 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32768/ - 307 0 null 17.0391ms
+2025-04-06 10:28:55.904 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32769/ - null null
+2025-04-06 10:28:55.908 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32769/ - 404 0 null 4.1744ms
+2025-04-06 10:28:55.912 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:32769/, Response status code: 404
