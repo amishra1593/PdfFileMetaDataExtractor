@@ -23,6 +23,6 @@ export type PdfMetadata  = {
     title: string;
     author: string;
     pageCount: number;
-    createdDate: string;
+    creationDate: string;
   }
   
