@@ -55,17 +55,19 @@ const MetadataTable: React.FC = () => {
             <TableCell>Author</TableCell>
             <TableCell>Pages</TableCell>
             <TableCell>Created</TableCell>
+            <TableCell>Uploaded</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {pdfs.map((pdf) => (
-            <TableRow key={pdf.id}>
-              <TableCell>{pdf.id}</TableCell>
-              <TableCell>{pdf.fileName}</TableCell>
-              <TableCell>{pdf.title}</TableCell>
-              <TableCell>{pdf.author}</TableCell>
-              <TableCell>{pdf.pageCount}</TableCell>
-              <TableCell>{pdf.creationDate}</TableCell>
+            <TableRow key={pdf?.id}>
+              <TableCell>{pdf?.id}</TableCell>
+              <TableCell>{pdf?.fileName}</TableCell>
+              <TableCell>{pdf?.title}</TableCell>
+              <TableCell>{pdf?.author}</TableCell>
+              <TableCell>{pdf?.pageCount}</TableCell>
+              <TableCell>{pdf?.creationDate}</TableCell>
+              <TableCell> {new Date(pdf?.uploadedAt)?.toLocaleString()}</TableCell>
             </TableRow>
           ))}
         </TableBody>
