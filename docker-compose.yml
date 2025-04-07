@@ -8,9 +8,7 @@ services:
       - "5000:8080"  # .NET app inside container exposes 8080
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-    networks:
-      - app-network
-
+  
   frontend:
     build:
       context: ./frontend-app
@@ -20,10 +18,4 @@ services:
       - REACT_APP_API_URL=http://backend:5000/api
       - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=FilesDB;User=sa;Password=admin@1234;
     depends_on:
-      - backend
-    networks:
-      - app-network
-
-networks:
-  app-network:
-    driver: bridge
+      - backend  
