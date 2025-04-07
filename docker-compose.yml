@@ -14,8 +14,5 @@ services:
       context: ./frontend-app
     ports:
       - "3000:3000"  # React app exposed on port 3000
-    environment:
-      - REACT_APP_API_URL=http://backend:5000/api
-      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=FilesDB;User=sa;Password=admin@1234;
     depends_on:
-      - backend  
+      - backend
