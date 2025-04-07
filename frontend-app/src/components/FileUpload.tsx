@@ -52,7 +52,7 @@ const FileUpload: React.FC = () => {
             variant="outlined"
             component="span"
             sx={styles.uploadButton}
-           onClick={(e) => {navigator("/")}}>View Files</Button>
+           onClick={(e) => {navigator("/list")}}>View Files</Button>
       <h1>PDF Metadata Extractor</h1>
       <Box sx={styles.uploadBox}>
         <Input

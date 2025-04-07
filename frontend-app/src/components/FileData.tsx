@@ -11,11 +11,11 @@ const FileData: React.FC<FileDataType> = ({fileMetaData }) => {
         <Card sx={styles.card}>
         <CardContent>
           <Typography variant="h6">Uploaded File Metadata</Typography>
-          <Typography><strong>File Name:</strong> {fileMetaData.fileName}</Typography>
-          <Typography><strong>Title:</strong> {fileMetaData.title}</Typography>
-          <Typography><strong>Author:</strong> {fileMetaData.author}</Typography>
-          <Typography><strong>Page Count:</strong> {fileMetaData.pageCount}</Typography>
-          <Typography><strong>Created Date:</strong> {fileMetaData.createdDate}</Typography>
+          <Typography><strong>File Name:</strong> {fileMetaData?.fileName}</Typography>
+          <Typography><strong>Title:</strong> {fileMetaData?.title}</Typography>
+          <Typography><strong>Author:</strong> {fileMetaData?.author}</Typography>
+          <Typography><strong>Page Count:</strong> {fileMetaData?.pageCount}</Typography>
+          <Typography><strong>Created Date:</strong> {new Date(fileMetaData?.creationDate)?.toLocaleString()}</Typography>
         </CardContent>
       </Card>
     )

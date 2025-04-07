@@ -5,7 +5,7 @@ export type PdfMetadata  = {
     author: string;
     pageCount: number;
     creationDate: string;
-    uploadDate: string;
+    uploadedAt: string;
   }
 
   export type PDFUploadResponse = {
@@ -23,6 +23,6 @@ export type PdfMetadata  = {
     title: string;
     author: string;
     pageCount: number;
-    createdDate: string;
+    creationDate: string;
   }
   

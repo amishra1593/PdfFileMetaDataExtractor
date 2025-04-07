@@ -9,6 +9,6 @@ export const uploadPDF = (file: File) => {
   return axios.post<PDFUploadResponse>(`${API_BASE}/upload`, formData);
 };
 
-export const getAllPDFs = (search?: string, page?: number,pageSize?:number) => {
-  return axios.get<PDFsListResponse>(`${API_BASE}/lists?searchValue=${search}&page=${page ?? null}&pageSize=${pageSize ?? null}`);
+export const getAllPDFs = (search?: string) => {
+  return axios.get<PDFsListResponse>(`${API_BASE}/lists?searchValue=${search}`);
 };
